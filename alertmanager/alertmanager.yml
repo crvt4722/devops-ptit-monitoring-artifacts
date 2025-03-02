@@ -1,0 +1,16 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'telegram'
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 3m
+
+receivers:
+  - name: 'telegram'
+    telegram_configs:
+      - bot_token: '785916785:AAEylihIvq_6v8e3yMDrgKQrKxfU'
+        chat_id: 564027
+        message: '{{ range .Alerts }}🔥 Alert: {{ .Annotations.summary }} - {{ .Annotations.description }}{{ end }}'
+
