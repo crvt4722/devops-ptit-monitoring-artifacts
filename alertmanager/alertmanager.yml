@@ -10,7 +10,7 @@ route:
 receivers:
   - name: 'telegram'
     telegram_configs:
-      - bot_token: '785916785:AAEylihIvq_6v8e3yMDrgKQrKxfU'
-        chat_id: 564027
+      - bot_token: '$YOUR_BOT_TOKEN'
+        chat_id: YOUR_CHAT_ID
         message: '{{ range .Alerts }}🔥 Alert: {{ .Annotations.summary }} - {{ .Annotations.description }}{{ end }}'
 
